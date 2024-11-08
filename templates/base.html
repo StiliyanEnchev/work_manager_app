@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Writing App</h1>
+        <nav>
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <p>This is the homepage of the writing app where you can create and manage your projects.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Writing App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
