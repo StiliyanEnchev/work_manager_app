@@ -2,18 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 header {
     background-color: #333;
     color: #fff;
     padding: 1em;
+    text-align: center;
 }
 
 header nav a {
     color: #fff;
     margin-right: 1em;
     text-decoration: none;
+
 }
 
 footer {
@@ -25,3 +28,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+

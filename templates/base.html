@@ -10,20 +10,23 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to the Writing App</h1>
+        <h1>Welcome to the Work Manager App</h1>
         <nav>
             <a href="#">Profile</a>
             <a href="#">Login</a>
             <a href="#">Register</a>
+            <a href="#">Dashboard</a>
+            <a href="#">About Us</a>
+
         </nav>
     </header>
-
-    <main>
-        <p>This is the homepage of the writing app where you can create and manage your projects.</p>
-    </main>
+    
+    {% block content %}
+    	
+    {% endblock %}
 
     <footer>
-        <p>&copy; 2024 Writing App. All rights reserved.</p>
+        <p>&copy; 2024 Work Manager App. All rights reserved.</p>
     </footer>
 </body>
 </html>
