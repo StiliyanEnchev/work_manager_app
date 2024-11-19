@@ -9,7 +9,7 @@ from accounts.models import CustomUser
 class CustomUserAdmin(UserAdmin):
 
     add_fieldsets = (
-        (None, {
+        ('User Details', {
             'fields': ('username', 'email', 'password1', 'password2', 'bio', 'type', 'is_active', 'is_staff', 'is_superuser'),
         }),
     )
