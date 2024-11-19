@@ -5,8 +5,10 @@
     <div class="d-flex justify-content-center align-items-center min-vh-100">
     <form method="post">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <button class="btn btn-primary">Login</button>
+                <p>If you do not have an account you can register here: <a href="{% url 'register' %}">Register</a></p>
+
     </form>
     </div>
 {% endblock %}
