@@ -19,7 +19,7 @@
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'register' %}">Register</a>
         {% else %}
-            <a href="#">Profile</a>
+            <a href="{% url 'details' user.pk %}">Profile</a>
         {% endif %}
         <a href="#">Dashboard</a>
         <a href="{% url 'about' %}">About Us</a>
