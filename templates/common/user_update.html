@@ -2,12 +2,20 @@
 {% load static %}
 
 {% block content %}
-    <div class="form-control">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+ <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="form-control p-4" style="width: 500px;">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.as_p }}
+                </div>
+
         <button class="btn btn-primary">Update</button>
 
-    </form>
+            </form>
+        </div>
     </div>
 {% endblock %}
+
+
+   

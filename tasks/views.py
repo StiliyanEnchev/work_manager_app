@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 from accounts.models import CustomUser
@@ -11,4 +12,4 @@ class CreateTaskView(CreateView):
     model = Task
     template_name = 'task/create.html'
     form_class = BaseTaskForm
-    success_url = 'home'
+    success_url = reverse_lazy('home')

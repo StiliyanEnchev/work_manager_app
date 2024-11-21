@@ -1,18 +1,16 @@
 {% extends 'common/base.html' %}
 {% load static %}
-{% load form_filters %}
 
 {% block content %}
-    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-        <h2 class="text-center">Register</h2>
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="form-control p-4" style="width: 400px;">
-            <form method="post">
-
+            <h2 class="text-center">Register</h2>
+            <form method="post" >
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn btn-primary">Register</button>
-                <p>If you have an account you can login here: <a href="{% url 'login' %}">Login</a></p>
-
+                <p>If you have an account, you can login here: <a href="{% url 'login' %}">Login</a></p>
             </form>
         </div>
+    </div>
 {% endblock %}
