@@ -1,12 +1,12 @@
 {% extends 'common/base.html' %}
 {% load static %}
+{% load form_filters %}
 
 {% block content %}
-    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <h2 class="text-center">Register</h2>
         <div class="form-control p-4" style="width: 400px;">
             <form method="post">
-                <h2 class="text-center">Register</h2>
 
                 {% csrf_token %}
                 {{ form.as_p }}
