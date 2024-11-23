@@ -3,7 +3,7 @@ from django.db import models
 
 
 # Create your models here.
-class Task(models.Model):
+class Job(models.Model):
     name = models.CharField(
         max_length=100,
         validators=[
@@ -24,7 +24,7 @@ class Task(models.Model):
     account = models.ForeignKey(
         to='accounts.CustomUser',
         on_delete=models.CASCADE,
-        related_name='tasks'
+        related_name='jobs'
     )
 
     created_on = models.DateTimeField(auto_now_add=True)
