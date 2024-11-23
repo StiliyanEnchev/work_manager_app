@@ -8,3 +8,9 @@ class BaseJobForm(forms.ModelForm):
         model = Job
         fields = '__all__'
 
+
+class CreateJobForm(BaseJobForm):
+    class Meta:
+        model = Job
+        fields = '__all__'
+        exclude = ['owner']

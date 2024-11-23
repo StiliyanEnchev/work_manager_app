@@ -7,8 +7,8 @@
         <div class="form-control p-4" style="width: 500px;">
             
             <form method="post">
-                {% csrf_token %}
                 <div class="mb-3">
+                    {% csrf_token %}
                     {{ form.as_p }}
                 </div>
 

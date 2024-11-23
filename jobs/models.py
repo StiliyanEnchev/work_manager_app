@@ -16,12 +16,12 @@ class Job(models.Model):
         MinLengthValidator(25, message='Description must be at least 25 characters')
     ])
 
-    done = models.BooleanField(default=False)
+    taken = models.BooleanField(default=False)
 
-    reward = models.IntegerField(
-        validators=[MinValueValidator(1, message='Reward must be at least 1$'), ]
+    salary_per_month = models.IntegerField(
+        validators=[MinValueValidator(800, message='Salary must be at least 800$'), ]
     )
-    account = models.ForeignKey(
+    owner = models.ForeignKey(
         to='accounts.CustomUser',
         on_delete=models.CASCADE,
         related_name='jobs'
