@@ -1,9 +1,11 @@
-from django.contrib.auth import login, get_user_model
+from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, DetailView
 
-from accounts.forms import CustomUserCreationForm, CustomUserChangeForm
+from accounts.forms import CustomUserCreationForm
 
 
 # Create your views here.
@@ -14,12 +16,8 @@ class UserRegistrationView(CreateView):
     success_url = reverse_lazy('home')
 
 
-class UserProfileUpdateView(UpdateView):
+class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
-    form_class = CustomUserChangeForm
-    success_url = reverse_lazy('home')
-    template_name = 'common/user_update.html'
-
-    def get_object(self, queryset=None):
-        return self.request.user
+    template_name = 'common/profile_detail.html'
+    context_object_name = 'user'
 

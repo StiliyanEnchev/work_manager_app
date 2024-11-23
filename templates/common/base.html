@@ -21,7 +21,7 @@
         {% else %}
             <a href="{% url 'details' user.pk %}">Profile</a>
         {% endif %}
-        {% if user.type == 'Looker' %}
+        {% if user.type == 'Job Poster' %}
         <a href="{% url 'create-task' %}">Create Task</a>
         {% endif %}
         <a href="{% url 'about' %}">About Us</a>
