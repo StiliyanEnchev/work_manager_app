@@ -13,4 +13,4 @@ class CreateJobForm(BaseJobForm):
     class Meta:
         model = Job
         fields = '__all__'
-        exclude = ['owner']
+        exclude = ['owner', 'taken']
