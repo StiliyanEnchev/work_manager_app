@@ -14,3 +14,6 @@ class CreateJobForm(BaseJobForm):
         model = Job
         fields = '__all__'
         exclude = ['owner', 'taken']
+
+class DashBoardPage(BaseJobForm):
+    pass

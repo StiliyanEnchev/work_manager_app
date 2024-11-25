@@ -1,0 +1,29 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Job Dashboard</h1>
+        <div class="row">
+            {% for job in job_list %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ job.name }}</h5>
+                            <p class="card-text">{{ job.description|truncatewords:15 }}</p>
+                            <p><strong>Salary:</strong> ${{ job.salary_per_month }}</p>
+                            <p><strong>Created On:</strong> {{ job.created_on|date:"M d, Y" }}</p>
+                            <p><strong>Last Updated:</strong> {{ job.last_updated|date:"M d, Y" }}</p>
+                            <p><strong>Posted By:</strong> {{ job.owner.username }}</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center mt-4">No jobs available.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

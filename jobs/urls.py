@@ -1,8 +1,9 @@
 from django.urls import path
 
-from jobs.views import CreateTaskView
+from jobs.views import CreateJobView, JobListView
 
 urlpatterns = [
-    path('create/', CreateTaskView.as_view(), name='create-job'),
+    path('create/', CreateJobView.as_view(), name='create-job'),
+    path('dashoard/', JobListView.as_view(), name='dashboard')
 
 ]
