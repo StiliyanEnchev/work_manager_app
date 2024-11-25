@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Job(models.Model):
-    name = models.CharField(
+    title = models.CharField(
         max_length=100,
         validators=[
             MinLengthValidator(4, message='Name must be at least 3 characters')
@@ -31,4 +31,4 @@ class Job(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.title
