@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative jobs."""
+"""Django's command-line utility for administrative job."""
 import os
 import sys
 
 
 def main():
-    """Run administrative jobs."""
+    """Run administrative job."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'work_manager_app.settings')
     try:
         from django.core.management import execute_from_command_line

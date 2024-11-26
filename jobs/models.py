@@ -24,7 +24,7 @@ class Job(models.Model):
     owner = models.ForeignKey(
         to='accounts.CustomUser',
         on_delete=models.CASCADE,
-        related_name='jobs'
+        related_name='job'
     )
 
     created_on = models.DateTimeField(auto_now_add=True)

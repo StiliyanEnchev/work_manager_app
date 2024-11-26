@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'work_manager_app.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'work_manager_app_db',
+        "NAME": 'workify',
         "USER": "postgres",
         "PASSWORD": "24866842",
         "HOST": "127.0.0.1",

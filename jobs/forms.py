@@ -17,3 +17,7 @@ class CreateJobForm(BaseJobForm):
 
 class DashBoardPage(BaseJobForm):
     pass
+
+
+class EditJobForm(CreateJobForm):
+    pass
