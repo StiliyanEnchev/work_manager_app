@@ -18,8 +18,9 @@ class UserRegistrationView(CreateView):
 
 class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
-    template_name = 'common/profile_detail.html'
+    template_name = 'profile/profile_detail.html'
     context_object_name = 'user'
 
     def get_object(self, queryset=None):
         return self.request.user
+
