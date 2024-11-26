@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
@@ -31,7 +32,10 @@ class JobListView(ListView):
 class EditJobView(UpdateView):
     model = Job
     form_class = EditJobForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('dashboard')
     template_name = 'job/edit.html'
+
+    def get_queryset(self):
+        return Job.objects.filter(owner=self.request.user)
 
 
