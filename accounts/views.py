@@ -21,3 +21,5 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
     template_name = 'common/profile_detail.html'
     context_object_name = 'user'
 
+    def get_object(self, queryset=None):
+        return self.request.user
