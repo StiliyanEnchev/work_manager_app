@@ -16,7 +16,11 @@
                             <p><strong>Created On:</strong> {{ job.created_on|date:"M d, Y" }}</p>
                             <p><strong>Last Updated:</strong> {{ job.last_updated|date:"M d, Y" }}</p>
                             <p><strong>Posted By:</strong> {{ job.owner.username }}</p>
-                            <a href="{% url 'edit-job' job.pk %}" class="btn btn-primary">Edit</a>
+                            {% if job.owner == user %}
+                                <a href="{% url 'edit-job' job.pk %}" class="btn btn-primary">Edit</a>
+                                {% else %}
+                                    <a href="#" class="btn btn-primary">More Details</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
