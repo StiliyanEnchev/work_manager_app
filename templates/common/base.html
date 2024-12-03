@@ -13,8 +13,9 @@
 </head>
 <body>
 <header>
-    <h1>Workify</h1>
-    <nav>
+<a href="/" style="text-decoration: none; color: inherit;">
+  <h1>Workify</h1>
+</a>    <nav>
         {% if not request.user.is_authenticated %}
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'register' %}">Register</a>
