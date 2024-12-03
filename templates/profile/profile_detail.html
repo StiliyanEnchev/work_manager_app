@@ -12,8 +12,11 @@
                     <li><strong>Last Name:</strong> {{ user.last_name }}</li>
                     <li><strong>Bio:</strong> {{ user.bio }}</li>
                 </ul>
-                
             </form>
+            <div>
+                <a href="{% url 'edit-profile' user.pk %}" class="btn btn-primary">Edit Profile</a>
+
+            </div>
         </div>
     </div>
 {% endblock %}
