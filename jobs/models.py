@@ -7,7 +7,7 @@ class Job(models.Model):
     title = models.CharField(
         max_length=100,
         validators=[
-            MinLengthValidator(4, message='Name must be at least 3 characters')
+            MinLengthValidator(3, message='The title must be at least 3 characters')
         ],
         unique=True
     )
