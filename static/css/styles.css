@@ -30,3 +30,20 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.background-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(113, 117, 119), #4b4f55);
+}
+
+
+.form-background {
+    background-color: #e1e1e1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
