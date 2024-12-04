@@ -36,12 +36,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, rgb(113, 117, 119), #4b4f55);
+    background: linear-gradient(to bottom, rgb(188, 188, 181), #9a9b99);
 }
 
 
 .form-background {
-    background-color: #e1e1e1;
+    background-color: #dcdcdc;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
