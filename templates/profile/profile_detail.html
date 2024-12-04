@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block content %}
-    
+
     <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-    
+
         <div class="form-background" style="width: 500px;">
-                        <div><h2 class="text-center">Profile Details</h2></div>
+            <div><h2 class="text-center">Profile Details</h2></div>
 
             <form>
-                <ul>
+                <ul style="word-wrap: break-word; white-space: normal;">
                     <li><strong>Username:</strong> {{ user.username }}</li>
                     <li><strong>Email:</strong> {{ user.email }}</li>
                     <li><strong>First Name:</strong> {{ user.first_name }}</li>
