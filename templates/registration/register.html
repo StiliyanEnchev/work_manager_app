@@ -5,10 +5,13 @@
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="form-background" style="width: 400px;">
             <h2 class="text-center">Register</h2>
-            <form method="post" >
+            <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="btn btn-primary">Register</button>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary w-50">Register</button>
+                </div>
+
                 <p>If you have an account, you can login here: <a href="{% url 'login' %}">Login</a></p>
             </form>
         </div>

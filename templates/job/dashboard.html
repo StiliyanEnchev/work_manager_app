@@ -7,9 +7,9 @@
         <h1 class="text-center mb-4">Job Dashboard</h1>
         <div class="row">
             {% for job in job_list %}
-            <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4">
                     <div class="card">
-                        <div class="form-background">    
+                        <div class="form-background">
                             <h5 class="card-title">{{ job.title }}</h5>
                             <p class="card-text">{{ job.description|truncatewords:15 }}</p>
                             <p><strong>Salary:</strong> ${{ job.salary_per_month }}</p>
@@ -17,9 +17,15 @@
                             <p><strong>Last Updated:</strong> {{ job.last_updated|date:"M d, Y" }}</p>
                             <p><strong>Posted By:</strong> {{ job.owner.username }}</p>
                             {% if job.owner == user %}
-                                <a href="{% url 'edit-job' job.pk %}" class="btn btn-primary">Edit</a>
-                                {% else %}
-                                    <a href="#" class="btn btn-primary">More Details</a>
+                                <div class="d-flex justify-content-end">
+                                    <a href="{% url 'edit-job' job.pk %}" class="btn btn-primary">Edit</a>
+                                </div>
+                            {% else %}
+                                <div class="d-flex justify-content-end">
+
+                                    <a href="#" class="btn btn-primary align-center">More Details</a>
+                                </div>
+
                             {% endif %}
                         </div>
                     </div>
