@@ -2,9 +2,9 @@ from django.contrib.auth import get_user_model
 from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
-from jobs.forms import CreateJobForm, DashBoardPage, EditJobForm
+from jobs.forms import CreateJobForm, DashBoardPage, EditJobForm, DeleteJobForm
 from jobs.models import Job
 
 
@@ -39,3 +39,17 @@ class EditJobView(UpdateView):
         return Job.objects.filter(owner=self.request.user)
 
 
+class DeleteJobView(DeleteView):
+    model = Job
+    template_name = 'job/delete-post.html'
+    success_url = reverse_lazy('dashboard')
+    form_class = DeleteJobForm
+
+    def get_initial(self):
+        return self.object.__dict__
+
+    def form_invalid(self, form):
+        return self.form_valid(form)
+
+    def get_queryset(self):
+        return Job.objects.filter(owner=self.request.user)

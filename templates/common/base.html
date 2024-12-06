@@ -20,8 +20,10 @@
             <h1>Register</h1>
         {% elif 'about' in request.path %}
             <h1>About</h1>
-            {% elif 'job/edit' in request.path %}
+        {% elif 'job/edit' in request.path %}
             <h1>Edit Job</h1>
+        {% elif 'job/delete' in request.path %}
+            <h1>Delete Job</h1>
         {% elif 'edit' in request.path %}
             <h1>Edit Profile</h1>
         {% elif 'accounts' in request.path %}

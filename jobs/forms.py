@@ -1,5 +1,6 @@
 from django import forms
 
+from common.mixins import FormDisableMixin
 from jobs.models import Job
 
 
@@ -21,3 +22,7 @@ class DashBoardPage(BaseJobForm):
 
 class EditJobForm(CreateJobForm):
     pass
+
+class DeleteJobForm(FormDisableMixin, EditJobForm):
+    read_only_fields = ['title', 'description', 'salary_per_month', 'created_on']
+
