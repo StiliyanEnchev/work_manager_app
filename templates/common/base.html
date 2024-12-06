@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Workify</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -14,7 +14,26 @@
 <body>
 <header>
     <a href="/" style="text-decoration: none; color: inherit;">
-        <h1>Workify</h1>
+        {% if 'login' in request.path %}
+            <h1>Login</h1>
+        {% elif 'register' in request.path %}
+            <h1>Register</h1>
+        {% elif 'about' in request.path %}
+            <h1>About</h1>
+            {% elif 'job/edit' in request.path %}
+            <h1>Edit Job</h1>
+        {% elif 'edit' in request.path %}
+            <h1>Edit Profile</h1>
+        {% elif 'accounts' in request.path %}
+            <h1>Profile</h1>
+        {% elif 'dashboard' in request.path %}
+            <h1>Dashboard</h1>
+        {% elif 'create' in request.path %}
+            <h1>Add New Job</h1>
+
+        {% else %}
+            <h1>Workify</h1>
+        {% endif %}
     </a>
     <nav>
         {% if not request.user.is_authenticated %}
