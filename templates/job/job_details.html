@@ -1,0 +1,25 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+
+        <div class="form-background" style="width: 500px;">
+
+            <form>
+                <ul style="word-wrap: break-word; white-space: normal;">
+                    <li><strong>Job Title:</strong> {{ job.title }}</li>
+                    <li><strong>Description:</strong> {{ job.description }}</li>
+                    <li><strong>Salary Per Month:</strong> {{ job.salary_per_month }}</li>
+                    <li><strong>Posted On:</strong> {{ job.created_on }}</li>
+                </ul>
+            </form>
+            <div class="d-flex justify-content-center gap-2">
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

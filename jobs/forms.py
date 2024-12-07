@@ -26,3 +26,6 @@ class EditJobForm(CreateJobForm):
 class DeleteJobForm(FormDisableMixin, EditJobForm):
     read_only_fields = ['title', 'description', 'salary_per_month', 'created_on']
 
+
+class JobDetailsForm(FormDisableMixin, EditJobForm):
+    read_only_fields = ['title', 'description', 'salary_per_month', 'created_on']

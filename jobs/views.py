@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 
 from jobs.forms import CreateJobForm, DashBoardPage, EditJobForm, DeleteJobForm
 from jobs.models import Job
@@ -53,3 +53,12 @@ class DeleteJobView(DeleteView):
 
     def get_queryset(self):
         return Job.objects.filter(owner=self.request.user)
+
+
+class JobDetailsView(DetailView):
+    template_name = 'job/job_details.html'
+    model = Job
+
+    def get_queryset(self):
+        pk = self.kwargs.get('pk')
+        return Job.objects.filter(pk=pk)
