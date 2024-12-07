@@ -14,7 +14,7 @@ from accounts.forms import CustomUserCreationForm
 class UserRegistrationView(CreateView):
     form_class = CustomUserCreationForm
     template_name = 'registration/register.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('login')
 
 
 class ProfileDetailView(LoginRequiredMixin, DetailView):
