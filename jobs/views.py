@@ -13,7 +13,7 @@ class CreateJobView(CreateView):
     model = Job
     template_name = 'job/create.html'
     form_class = CreateJobForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('dashboard')
 
     def form_valid(self, form):
         form.instance.owner = self.request.user

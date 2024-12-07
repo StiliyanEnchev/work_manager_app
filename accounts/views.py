@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import PasswordChangeView
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView
@@ -33,3 +34,9 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('details', kwargs={'pk': self.object.pk})
+
+class ProfilePasswordChange(LoginRequiredMixin, PasswordChangeView):
+    template_name = 'profile/password_change.html'
+
+    def get_success_url(self):
+        return reverse_lazy('details', kwargs={'pk': self.request.user.pk})

@@ -9,11 +9,10 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="form-background">
-                            <h5 class="card-title">{{ job.title }}</h5>
+                            <h5 class="card-title"> {{ job.title }}</h5>
                             <p class="card-text">{{ job.description|truncatewords:15 }}</p>
                             <p><strong>Salary:</strong> ${{ job.salary_per_month }}</p>
                             <p><strong>Created On:</strong> {{ job.created_on|date:"M d, Y" }}</p>
-                            <p><strong>Last Updated:</strong> {{ job.last_updated|date:"M d, Y" }}</p>
                             <p><strong>Posted By:</strong> {{ job.owner.username }}</p>
                             {% if job.owner == user %}
                                 <div class="d-flex justify-content-end gap-2">

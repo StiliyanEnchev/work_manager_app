@@ -16,8 +16,10 @@
                     <li><strong>Bio:</strong> {{ user.bio }}</li>
                 </ul>
             </form>
-            <div class="d-flex justify-content-center">
-                <a href="{% url 'edit-profile' user.pk %}" class="btn btn-primary w-50">Edit Profile</a>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'edit-profile' user.pk %}" class="btn btn-primary w-20">Edit</a>
+                <a href="{% url 'password-change' user.pk %}" class="btn btn-primary w-20">Change Password</a>
+
 
             </div>
         </div>
