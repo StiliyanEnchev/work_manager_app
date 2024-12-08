@@ -39,7 +39,7 @@ class JobApplication(models.Model):
     job = models.ForeignKey('Job', on_delete=models.CASCADE, related_name='applications')
     freelancer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='applications')
     applied_on = models.DateTimeField(auto_now_add=True)
-    message = models.TextField(blank=True, null=True)
+    bio = models.TextField(blank=True, null=True)
 
     class Meta:
         unique_together = ('job', 'freelancer')

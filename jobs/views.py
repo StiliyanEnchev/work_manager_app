@@ -76,7 +76,9 @@ class ApplyForJobView(LoginRequiredMixin, View):
         user = request.user
 
         try:
-            JobApplication.objects.create(job=job, freelancer=user)
+            current_job = JobApplication.objects.create(job=job, freelancer=user)
+            current_job.bio = user.bio
+            current_job.save()
             return redirect('successfull')
 
         except IntegrityError:
