@@ -10,5 +10,7 @@ urlpatterns = [
     path('delete/<int:pk>/', DeleteJobView.as_view(), name='delete-job'),
     path('details/<int:pk>/', JobDetailsView.as_view(), name='job-details'),
     path('apply/<int:pk>/', ApplyForJobView.as_view(), name='apply-for-job'),
-    path('successfull/', views.successfull, name='successfull')
+    path('successfull/', views.successfull, name='successfull'),
+    path('unsuccessfull/', views.unsuccessfull, name='unsuccessfull')
+
 ]

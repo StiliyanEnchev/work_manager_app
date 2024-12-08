@@ -41,5 +41,8 @@ class JobApplication(models.Model):
     applied_on = models.DateTimeField(auto_now_add=True)
     message = models.TextField(blank=True, null=True)
 
+    class Meta:
+        unique_together = ('job', 'freelancer')
+
     def __str__(self):
         return f"{self.freelancer} applied for {self.job}"

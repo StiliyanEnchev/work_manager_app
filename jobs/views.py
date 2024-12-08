@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db import IntegrityError
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -69,13 +70,21 @@ class JobDetailsView(DetailView):
 
 
 class ApplyForJobView(LoginRequiredMixin, View):
+
     def post(self, request, pk, *args, **kwargs):
         job = get_object_or_404(Job, id=pk)
         user = request.user
 
-        JobApplication.objects.create(job=job, freelancer=user)
-        return redirect('successfull')
+        try:
+            JobApplication.objects.create(job=job, freelancer=user)
+            return redirect('successfull')
+
+        except IntegrityError:
+            return redirect('unsuccessfull')
 
 
 def successfull(request):
     return render(request, 'job/applied.html')
+
+def unsuccessfull(request):
+    return render(request, 'job/unsuccessfull.html')
