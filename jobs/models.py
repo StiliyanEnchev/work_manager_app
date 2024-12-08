@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
 
@@ -32,3 +33,13 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class JobApplication(models.Model):
+    job = models.ForeignKey('Job', on_delete=models.CASCADE, related_name='applications')
+    freelancer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='applications')
+    applied_on = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.freelancer} applied for {self.job}"

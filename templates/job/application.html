@@ -1,0 +1,11 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+   {% block content %}
+
+    <form method="POST" action="{% url 'apply_for_job' job.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Apply</button>
+    </form>
+{% endblock %}

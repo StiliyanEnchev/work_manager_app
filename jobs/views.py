@@ -1,11 +1,13 @@
+from django.contrib import messages
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 
 from jobs.forms import CreateJobForm, DashBoardPage, EditJobForm, DeleteJobForm
-from jobs.models import Job
+from jobs.models import Job, JobApplication
 
 
 # Create your views here.
@@ -62,3 +64,12 @@ class JobDetailsView(DetailView):
     def get_queryset(self):
         pk = self.kwargs.get('pk')
         return Job.objects.filter(pk=pk)
+
+
+@login_required
+def apply_for_job(request, pk):
+    job = get_object_or_404(Job, id=pk)
+    user = request.user
+
+    JobApplication.objects.create(job=job, freelancer=user)
+    return redirect('dashboard')
