@@ -6,14 +6,14 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Authenti
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = get_user_model()
-        fields = ('username', 'email', 'type')
+        fields = ('username', 'email', 'type', 'contact_number')
 
 
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = get_user_model()
-        fields = ('username', 'email', 'first_name', 'last_name', 'bio')
+        fields = ('username', 'email', 'first_name', 'last_name', 'contact_number', 'bio')
 
 
 
