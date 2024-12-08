@@ -16,10 +16,15 @@
                 </ul>
             </form>
             <div class="d-flex justify-content-center gap-2">
+
+                {% if not user.bio %}
+                    <p>You need to add Bio to your profile before apply for a job. <a href="{% url 'edit-profile' user.pk %}">Edit your profile </a></p>
+                {% else %}
                     <form method="POST" action="{% url 'apply-for-job' job.id %}">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary">Apply</button>
                     </form>
+                {% endif %}
             </div>
         </div>
     </div>
