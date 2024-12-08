@@ -1,0 +1,34 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+    <div class="container my-5">
+        <div class="row">
+            {% for item in dashboard_data %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="form-background">
+                            <h2>Job: {{ item.job.title }}</h2>
+                            <p>Description: {{ item.job.description }}</p>
+                            <p>Posted on: {{ item.job.created_on }}</p>
+                        
+                            <h3>Applications:</h3>
+                            <ul>
+                                {% for application in item.applications %}
+                                    <li>
+                                        {{ application.freelancer.username }} - Applied on {{ application.applied_on }}
+                                    </li>
+                                {% empty %}
+                                    <p>No applications yet.</p>
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center mt-4">No jobs available.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

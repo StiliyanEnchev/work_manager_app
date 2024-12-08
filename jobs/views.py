@@ -1,9 +1,6 @@
-from django.contrib import messages
-from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import IntegrityError
-from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -88,5 +85,23 @@ class ApplyForJobView(LoginRequiredMixin, View):
 def successfull(request):
     return render(request, 'job/applied.html')
 
+
 def unsuccessfull(request):
     return render(request, 'job/unsuccessfull.html')
+
+
+@login_required()
+def candidates_dashboard(request):
+    jobs = Job.objects.filter(owner=request.user).prefetch_related('applications__freelancer')
+
+    dashboard_data = []
+    for job in jobs:
+        applications = job.applications.all()
+        dashboard_data.append({
+            'job': job,
+            'applications': applications,
+        })
+
+    return render(request, 'job/candidates.html', {
+        'dashboard_data': dashboard_data
+    })
