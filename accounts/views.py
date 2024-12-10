@@ -25,15 +25,18 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
     def get_object(self, queryset=None):
         return self.request.user
 
+
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     template_name = 'profile/edit_profile.html'
     fields = ['username', 'first_name', 'last_name', 'email', 'bio', 'contact_number']
+
     def get_object(self, queryset=None):
         return self.request.user
 
     def get_success_url(self):
         return reverse('details', kwargs={'pk': self.object.pk})
+
 
 class ProfilePasswordChange(LoginRequiredMixin, PasswordChangeView):
     template_name = 'profile/password_change.html'

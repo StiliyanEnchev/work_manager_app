@@ -7,7 +7,7 @@ register = template.Library()
 def split(value, delimiter):
     return value.split(delimiter)
 
+
 @register.filter
 def replace_with_dash(value):
     return value.replace('-', ' ')
-

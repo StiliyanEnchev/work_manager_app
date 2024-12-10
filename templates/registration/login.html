@@ -11,11 +11,11 @@
                     <div class="d-flex flex-column gap-3">
                         {% for row in form %}
                             {{ row.label_tag }}
-                        {{ row|add_class:"form-control" }}
+                            {{ row|add_class:"form-control" }}
                         {% endfor %}
                     </div>
                 </div>
-            
+
                 {% if form.errors %}
                     <div>
                         <ul>
@@ -27,7 +27,7 @@
                         </ul>
                     </div>
                 {% endif %}
-            
+
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary w-50">Login</button>
                 </div>
