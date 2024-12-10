@@ -16,9 +16,8 @@ def create_groups_and_permissions(sender, **kwargs):
     content_type = ContentType.objects.get_for_model(Job)
     add_permission = Permission.objects.get(codename='add_job', content_type=content_type)
     change_permission = Permission.objects.get(codename='change_job', content_type=content_type)
-    delete_permission = Permission.objects.get(codename='delete_job', content_type=content_type)
     view_permission = Permission.objects.get(codename='view_job', content_type=content_type)
-    editors_group.permissions.add(add_permission, change_permission, delete_permission, view_permission)
+    editors_group.permissions.add(add_permission, change_permission, view_permission)
 
     user_managers_group, created = Group.objects.get_or_create(name="User Managers")
 

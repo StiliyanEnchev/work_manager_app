@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db import IntegrityError
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -31,14 +31,12 @@ class JobListView(ListView):
         return Job.objects.filter(taken=False).order_by('-created_on')
 
 
-class EditJobView(UpdateView):
+class EditJobView(PermissionRequiredMixin, UpdateView):
     model = Job
     form_class = EditJobForm
     success_url = reverse_lazy('dashboard')
     template_name = 'job/edit.html'
-
-    def get_queryset(self):
-        return Job.objects.filter(owner=self.request.user)
+    permission_required = 'jobs.change_job'
 
 
 class DeleteJobView(DeleteView):
