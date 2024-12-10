@@ -1,10 +1,13 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 from accounts.models import CustomUser
 
+UserModel = get_user_model()
+
 # Register your models here.
-@admin.register(CustomUser)
+@admin.register(UserModel)
 class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         ('User Details', {
