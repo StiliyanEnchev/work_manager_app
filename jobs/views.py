@@ -102,6 +102,6 @@ def candidates_dashboard(request):
             'applications': applications,
         })
 
-    return render(request, 'job/candidates.html', {
+    return render(request, 'job/my-jobs.html', {
         'dashboard_data': dashboard_data
     })

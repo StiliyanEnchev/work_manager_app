@@ -12,6 +12,6 @@ urlpatterns = [
     path('application/<int:pk>/', ApplyForJobView.as_view(), name='apply-for-job'),
     path('sent/', views.successfull, name='successfull'),
     path('unsuccessfull/', views.unsuccessfull, name='unsuccessfull'),
-    path('my-jobs/', views.candidates_dashboard, name='candidates')
+    path('my-jobs/', views.candidates_dashboard, name='my-jobs')
 
 ]
