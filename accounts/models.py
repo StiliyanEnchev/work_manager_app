@@ -19,3 +19,4 @@ class CustomUser(AbstractUser):
         MaxLengthValidator(13),
         only_numbers,
     ])
+
