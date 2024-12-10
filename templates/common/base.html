@@ -1,5 +1,7 @@
 {% load static %}
 {% load custom_tags %}
+{% load custom_filters %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,28 +17,9 @@
 <header>
 
     <a href="/" style="text-decoration: none; color: inherit;">
-        {% if 'login' in request.path %}
-            <h1>Login</h1>
-        {% elif 'register' in request.path %}
-            <h1>Register</h1>
-        {% elif 'about' in request.path %}
-            <h1>About</h1>
-        {% elif 'job/edit' in request.path %}
-            <h1>Edit Job</h1>
-        {% elif 'job/delete' in request.path %}
-            <h1>Delete Job</h1>
-        {% elif 'edit' in request.path %}
-            <h1>Edit Profile</h1>
-        {% elif 'accounts' in request.path %}
-            <h1>Profile</h1>
-        {% elif 'dashboard' in request.path %}
-            <h1>Dashboard</h1>
-        {% elif 'create' in request.path %}
-            <h1>Add New Job</h1>
-
-        {% else %}
-            <h1>Workify</h1>
-        {% endif %}
+        {% with request.path|split:"/" as path_parts %}
+            <h1>{{ path_parts.2|default:"Workify"|replace_with_dash|capfirst }}</h1>
+        {% endwith %}
     </a>
     <nav>
         {% if not request.user.is_authenticated %}
