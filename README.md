@@ -120,6 +120,7 @@ If the user is in the Group Editors he can edit all jobs as displayed below but 
 10.**Feedback can be submitted only by logged users and it is displayed in the admin panel**. 
 
 ![image](https://github.com/user-attachments/assets/7e962397-7c70-4f75-b48d-d879584be79b)
+---
 
 
 
