@@ -1,7 +1,7 @@
 # **Workify**
 
 **Description**:  
-Workify connects freelancers with job posters seeking skilled professionals for various projects.
+- Workify connects freelancers with job posters seeking skilled professionals for various projects.
 
 
 ---
