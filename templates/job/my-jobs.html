@@ -17,7 +17,9 @@
                             <ul>
                                 {% for application in item.applications %}
                                     <li>
-                                        {{ application.freelancer.username }} - Applied on {{ application.applied_on }}
+                                        <strong>{{ application.freelancer.username }}</strong> - Applied
+                                        on {{ application.applied_on }}<br>
+                                        <span>Phone: {{ application.freelancer.contact_number|default:"No phone number available" }}</span>
                                     </li>
                                 {% empty %}
                                     <p>No applications yet.</p>
