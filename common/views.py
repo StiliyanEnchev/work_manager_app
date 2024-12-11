@@ -22,7 +22,6 @@ class SubmitFeedbackView(CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        messages.success(self.request, 'Thank you for your feedback!')
         return super().form_valid(form)
 
     def get_success_url(self):
