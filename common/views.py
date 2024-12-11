@@ -49,3 +49,4 @@ class NewsListView(ListView):
     def get_queryset(self):
         return News.objects.filter(is_active=True).order_by('-published_on')
 
+
