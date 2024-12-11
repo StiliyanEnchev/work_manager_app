@@ -26,3 +26,8 @@ def create_groups_and_permissions(sender, **kwargs):
     change_user_permission = Permission.objects.get(codename='change_customuser', content_type=user_content_type)
     delete_user_permission = Permission.objects.get(codename='delete_customuser', content_type=user_content_type)
     user_managers_group.permissions.add(view_user_permission, change_user_permission, delete_user_permission)
+
+    super_admins_group, created = Group.objects.get_or_create(name="Super Admins")
+
+    all_permissions = Permission.objects.all()
+    super_admins_group.permissions.set(all_permissions)
