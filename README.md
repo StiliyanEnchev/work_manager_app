@@ -85,3 +85,13 @@ Short Introduction of the available options:
 
 ![image](https://github.com/user-attachments/assets/cf33fa5d-134c-43f8-9f91-c4cb4f2a9624)
 ---
+
+5.**Profile Details and changes can be done from the Profile page**:
+
+![image](https://github.com/user-attachments/assets/65bcaf94-9cb3-41c5-95ca-10adba720377)
+---
+
+5.**My Jobs displays only the posted job by the Job Poster if there are any and shows the candidates for it with their contact and an option to mark the job as Taken in order for it to be removed from the dashboard**:
+
+![image](https://github.com/user-attachments/assets/13a112a7-5e42-423e-81d2-77b082256ba7)
+---
