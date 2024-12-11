@@ -12,11 +12,16 @@ class CustomUser(AbstractUser):
         Freelancer = 'Freelancer', 'Freelancer'
 
     bio = models.TextField(blank=True)
+
+    photo = models.URLField(
+        blank=True, null=True
+    )
     type = models.CharField(choices=TypeChoices)
+
     email = models.EmailField(unique=True)
+
     contact_number = models.CharField(validators=[
         MinLengthValidator(10),
         MaxLengthValidator(13),
         only_numbers,
     ])
-

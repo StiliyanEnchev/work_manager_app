@@ -29,7 +29,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     template_name = 'profile/edit_profile.html'
-    fields = ['username', 'first_name', 'last_name', 'email', 'bio', 'contact_number']
+    fields = ['username', 'first_name', 'last_name', 'email', 'bio', 'photo', 'contact_number']
 
     def get_object(self, queryset=None):
         return self.request.user
