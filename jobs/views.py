@@ -38,6 +38,14 @@ class EditJobView(PermissionRequiredMixin, UpdateView):
     template_name = 'job/edit.html'
     permission_required = 'jobs.change_job'
 
+    def has_permission(self):
+
+        job = self.get_object()
+        if job.owner == self.request.user:
+            return True
+
+        return super().has_permission()
+
 
 class DeleteJobView(DeleteView):
     model = Job
