@@ -43,7 +43,6 @@
 5. **Migrate Without Signals**:
    "accounts/signals.py" must be removed (or made as a comment) before the first migration to the database. Then the file needs to be added to it and migrated again to apply the groups after the permissions have been created for the models.
 
-   ```
 
 6. **Apply migrations**:
    ```bash
