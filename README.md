@@ -5,7 +5,9 @@ Description: Workifty connects freelancers with job posters seeking skilled prof
 How It Works:
 
 Job posters create new jobs on the website, and freelancers apply for jobs that match their bio or skills. 
+
 The platform includes a feedback system to ensure quality and trust.
+
 A news panel keeps users updated with the latest platform announcements and opportunities.
 
 Installation Steps for my Work Manager App
