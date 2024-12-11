@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db import IntegrityError
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -111,3 +112,16 @@ def candidates_dashboard(request):
     return render(request, 'job/my-jobs.html', {
         'dashboard_data': dashboard_data
     })
+
+
+@login_required
+def mark_job_taken(request, pk):
+    job = get_object_or_404(Job, id=pk)
+
+    if job.owner != request.user:
+        return HttpResponseForbidden("You don't have permission to modify this job.")
+
+    job.taken = True
+    job.save()
+
+    return redirect('dashboard')

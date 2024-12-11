@@ -1,7 +1,8 @@
 from . import views
 from django.urls import path
 
-from jobs.views import CreateJobView, JobListView, EditJobView, DeleteJobView, JobDetailsView, ApplyForJobView
+from jobs.views import CreateJobView, JobListView, EditJobView, DeleteJobView, JobDetailsView, ApplyForJobView, \
+    mark_job_taken
 
 urlpatterns = [
     path('create-job/', CreateJobView.as_view(), name='create-job'),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('application/<int:pk>/', ApplyForJobView.as_view(), name='apply-for-job'),
     path('sent/', views.successfull, name='successfull'),
     path('unsuccessfull/', views.unsuccessfull, name='unsuccessfull'),
-    path('my-jobs/', views.candidates_dashboard, name='my-jobs')
+    path('my-jobs/', views.candidates_dashboard, name='my-jobs'),
+    path('job-is-made-taken/<int:pk>/', views.mark_job_taken, name='mark-job-taken'),
 
 ]

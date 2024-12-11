@@ -12,15 +12,31 @@
                             <h2>Job: {{ item.job.title }}</h2>
                             <p>Description: {{ item.job.description }}</p>
                             <p>Posted on: {{ item.job.created_on }}</p>
-
                             <h3>Applications:</h3>
                             <ul>
                                 {% for application in item.applications %}
+
                                     <li>
                                         <strong>{{ application.freelancer.username }}</strong> - Applied
                                         on {{ application.applied_on }}<br>
                                         <span>Phone: {{ application.freelancer.contact_number|default:"No phone number available" }}</span>
                                     </li>
+
+                                    {% if forloop.last %}
+
+                                        <form method="post" action="{% url 'mark-job-taken' item.job.id %}">
+                                            {% csrf_token %}
+                                            <div class="d-flex justify-content-end mt-3">
+                                                {% if not item.job.taken %}
+                                                    <button type="submit" class="btn btn-primary">Mark as Taken</button>
+                                                {% else %}
+                                                    <button type="button" class="btn btn-secondary" disabled>Assigned
+                                                    </button>
+                                                {% endif %}
+                                            </div>
+                                        </form>
+
+                                    {% endif %}
                                 {% empty %}
                                     <p>No applications yet.</p>
                                 {% endfor %}
