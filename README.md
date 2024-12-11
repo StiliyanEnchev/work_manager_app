@@ -78,7 +78,7 @@ Short Introduction of the available options:
 ![image](https://github.com/user-attachments/assets/871f49d6-582b-4488-9c8f-10438f1df975)
 
 - If the user is Job Poster:
-![image](https://github.com/user-attachments/assets/01cf351a-aab7-4f11-b62d-c08a22bbfa3b)
+![image](https://github.com/user-attachments/assets/a7f02848-3a1b-4bbc-ad03-ac099b0a90c2)
 ---
 
 4.**Title changes dynamically based on the URL of the page**:
