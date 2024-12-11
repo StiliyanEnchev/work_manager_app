@@ -9,9 +9,8 @@
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="form-background">
-                            <h2>Job: {{ item.job.title }}</h2>
-                            <p>Description: {{ item.job.description }}</p>
-                            <p>Posted: {{ item.job.created_on|date:"F j, Y" }}</p>
+                            <h2>{{ item.job.title }}</h2>
+                            <p>{{ item.job.description }}</p>
                             <h3>Applications:</h3>
                             <ul>
                                 {% for application in item.applications %}
