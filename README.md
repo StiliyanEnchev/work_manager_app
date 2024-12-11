@@ -101,3 +101,25 @@ Short Introduction of the available options:
 ![image](https://github.com/user-attachments/assets/a4b68a68-3554-4787-a87a-277c1bc194de)
 ---
 
+8.**Dashboard where all jobs are displayed. 
+If the user is the creator, he can edit/delete it. 
+If the user is Freelancer he can apply for jobs. 
+If the user is in the Group Editors he can edit all jobs as displayed below but delete only his owns. **
+
+![image](https://github.com/user-attachments/assets/8e4e49b3-99c9-4dbe-ae8d-198e0f6fefcb)
+---
+
+9.**Dashboard where all jobs are displayed**. 
+If the user is the creator, he can edit/delete it. 
+If the user is Freelancer he can apply for jobs. 
+If the user is in the Group Editors he can edit all jobs as displayed below but delete only his owns. **
+
+![image](https://github.com/user-attachments/assets/8e4e49b3-99c9-4dbe-ae8d-198e0f6fefcb)
+---
+
+10.**Feedback can be submitted only by logged users and it is displayed in the admin panel**. 
+
+![image](https://github.com/user-attachments/assets/7e962397-7c70-4f75-b48d-d879584be79b)
+
+
+
