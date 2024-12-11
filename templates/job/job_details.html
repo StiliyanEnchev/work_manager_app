@@ -16,8 +16,10 @@
                 </ul>
             </form>
             <div class="d-flex justify-content-center gap-2">
-
-                {% if not user.bio %}
+                
+                {% if user.type == 'Job Poster' %}
+                    <p>You cannot apply for jobs as Job Poster </p>
+                {% elif not user.bio %}
                     <p>You need to add Bio to your profile before apply for a job. <a
                             href="{% url 'edit-profile' user.pk %}">Edit your profile </a></p>
                 {% else %}
