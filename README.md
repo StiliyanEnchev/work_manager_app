@@ -40,19 +40,24 @@
   
    ```
 
-5. **Apply migrations**:
+5. **Migrate Without Signals**:
+   "accounts/signals.py" must be removed (or made as a comment) before the first migration to the database. Then the file needs to be added to it and migrated again to apply the groups after the permissions have been created for the models.
+
+   ```
+
+6. **Apply migrations**:
    ```bash
     python manage.py makemigrations
     python manage.py migrate
    ```
 
-6. **Run the server**:
+7. **Run the server**:
    ```bash
    
     python manage.py runserver
    ```
 
-6. **Access the app**:
+8. **Access the app**:
    ```bash
 
     Open your browser and visit http://127.0.0.1:8000/
