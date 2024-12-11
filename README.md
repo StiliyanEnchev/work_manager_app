@@ -83,5 +83,5 @@ Short Introduction of the available options:
 
 4.**Title changes dynamically based on the URL of the page**:
 
-![image](https://github.com/user-attachments/assets/550b325d-3377-4328-9608-6be531f48824)
+![image](https://github.com/user-attachments/assets/cf33fa5d-134c-43f8-9f91-c4cb4f2a9624)
 ---
