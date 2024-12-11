@@ -41,7 +41,7 @@
             <a href="{% url 'details' user.pk %}">Profile</a>
         {% endif %}
         {% if user.type == 'Job Poster' %}
-            <a href="{% url 'create-job' %}">Add New Job</a>
+            <a href="{% url 'create-job' %}">New Job</a>
             <a href="{% url 'my-jobs' %}">My Jobs</a>
         {% endif %}
         <a href="{% url 'about' %}">About Us</a>
