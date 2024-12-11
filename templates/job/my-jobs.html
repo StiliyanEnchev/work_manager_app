@@ -11,14 +11,15 @@
                         <div class="form-background">
                             <h2>Job: {{ item.job.title }}</h2>
                             <p>Description: {{ item.job.description }}</p>
-                            <p>Posted on: {{ item.job.created_on }}</p>
+                            <p>Posted: {{ item.job.created_on|date:"F j, Y" }}</p>
                             <h3>Applications:</h3>
                             <ul>
                                 {% for application in item.applications %}
 
                                     <li>
                                         <strong>{{ application.freelancer.username }}</strong> - Applied
-                                        on {{ application.applied_on }}<br>
+                                         {{ application.applied_on|timesince }} ago<br>
+
                                         <span>Phone: {{ application.freelancer.contact_number|default:"No phone number available" }}</span>
                                     </li>
 
