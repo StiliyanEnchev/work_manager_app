@@ -1,40 +1,59 @@
-# Workify
+# **Workify**
 
-Description: Workifty connects freelancers with job posters seeking skilled professionals for various projects.
+**Description**:  
+Workify connects freelancers with job posters seeking skilled professionals for various projects.
 
-How It Works:
 
-Job posters create new jobs on the website, and freelancers apply for jobs that match their bio or skills. 
+---
 
-The platform includes a feedback system to ensure quality and trust.
+## **How It Works**:
+- **Job Posters**: Create job listings and manage them.
+- **Freelancers**: Apply for jobs that match their bio or skills.
+- **Feedback System**: Ensures quality and trust.
+- **News Panel**: Keeps users updated with platform announcements and opportunities.
 
-A news panel keeps users updated with the latest platform announcements and opportunities.
+---
 
-Installation Steps for my Work Manager App
+## **Installation Steps**:
 
-Clone the repository:
+1. **Clone the repository**:
+   ```bash
+   
+   git clone https://github.com/StiliyanEnchev/work_manager_app.git
+   ```
+2. **Navigate to the project directory**:
+   ```bash
+   
+   cd work_manager_app
+    ```
 
-git clone https://github.com/StiliyanEnchev/work_manager_app.git
+3. **Set up a virtual environment**:
+   ```bash
 
-Navigate to the project directory:
-cd work_manager_app
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
 
-Set up a virtual environment:
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+4. **Install dependencies**:
+   ```bash
+    pip install -r requirements.txt
+  
+   ```
 
-Install dependencies:
+5. **Apply migrations**:
+   ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+   ```
 
-pip install -r requirements.txt
+6. **Run the server**:
+   ```bash
+   
+    python manage.py runserver
+   ```
 
-Apply migrations:
+6. **Access the app**:
+   ```bash
 
-python manage.py makemigrations
-python manage.py migrate
-
-Run the development server:
-python manage.py runserver
-
-Access the app: 
-
-Open your browser and visit http://127.0.0.1:8000/
+    Open your browser and visit http://127.0.0.1:8000/
+   ```
