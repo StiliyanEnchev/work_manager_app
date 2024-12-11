@@ -93,5 +93,5 @@ Short Introduction of the available options:
 
 5.**My Jobs displays only the posted job by the Job Poster if there are any and shows the candidates for it with their contact and an option to mark the job as Taken in order for it to be removed from the dashboard**:
 
-![image](https://github.com/user-attachments/assets/13a112a7-5e42-423e-81d2-77b082256ba7)
+![image](https://github.com/user-attachments/assets/024fda95-ac55-4f0f-bc70-4b53d21deee4)
 ---
