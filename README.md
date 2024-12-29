@@ -40,19 +40,33 @@
   
    ```
 
-5. **Apply migrations**:
+5. **Configure Database Settings**: 
+   ```bash
+     Open the settings.py file of the project and configure the database settings.
+
+   ```
+   
+
+6. **Migrate Without Signals**: 
+   ```bash
+   The "accounts/signals.py" must be removed (or made as a comment) before the first migration to the database.
+   Then added again for the next migration to apply the groups after the permissions have been created for the models.
+
+   ```
+
+7. **Apply migrations**:
    ```bash
     python manage.py makemigrations
     python manage.py migrate
    ```
 
-6. **Run the server**:
+8. **Run the server**:
    ```bash
    
     python manage.py runserver
    ```
 
-6. **Access the app**:
+9. **Access the app**:
    ```bash
 
     Open your browser and visit http://127.0.0.1:8000/
