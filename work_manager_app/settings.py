@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'work_manager_app.middlewares.measure_time_execution',
 ]
 
 ROOT_URLCONF = 'work_manager_app.urls'
